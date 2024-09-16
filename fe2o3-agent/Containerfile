@@ -1,0 +1,15 @@
+# Stage 1: Build the Rust project
+FROM rust:alpine as builder
+# Set the working directory
+WORKDIR /usr/src/fe203-agent
+# Copy the actual code - honor .dockerignore
+COPY . .
+# Build the actual project
+RUN cargo build --release
+
+# Stage 2: Create the final image using distroless
+FROM scratch as final
+# Copy the binary from the builder stage
+COPY --from=builder /usr/src/fe203-agent/target/release/fe2o3-agent /usr/local/bin/fe2o3-agent
+# Set the entrypoint to the binary
+ENTRYPOINT ["/usr/local/bin/fe2o3-agent"]
