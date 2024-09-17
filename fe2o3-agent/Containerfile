@@ -4,6 +4,8 @@ FROM rust:alpine as builder
 WORKDIR /usr/src/fe203-agent
 # Copy the actual code - honor .dockerignore
 COPY . .
+# Install dev dependencies - needed for compilation
+RUN apk add musl-dev capnproto-dev
 # Build the actual project
 RUN cargo build --release
 
