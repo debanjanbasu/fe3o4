@@ -12,7 +12,7 @@ async fn main() -> Result<()> {
 
     /* Copy .gitignore to .containerignore. This is used later on to ensure the proper
     .gitignore files are considered during building the container */
-    copy(".gitignore", ".containerignore").await?;
+    copy("../.gitignore", ".containerignore").await?;
 
     Ok(())
 }

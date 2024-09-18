@@ -229,8 +229,8 @@ pub mod point {
 
 pub mod point_tracker {
   #![allow(unused_variables)]
-  pub type AddPointParams<> = ::capnp::capability::Params<crate::fe2o3_agent_schema_capnp::point_tracker::add_point_params::Owned>;
-  pub type AddPointResults<> = ::capnp::capability::Results<crate::fe2o3_agent_schema_capnp::point_tracker::add_point_results::Owned>;
+  pub type AddPointParams<> = ::capnp::capability::Params<crate::server::fe2o3_agent_schema_capnp::point_tracker::add_point_params::Owned>;
+  pub type AddPointResults<> = ::capnp::capability::Results<crate::server::fe2o3_agent_schema_capnp::point_tracker::add_point_results::Owned>;
 
   pub struct Client {
     pub client: ::capnp::capability::Client,
@@ -280,7 +280,7 @@ pub mod point_tracker {
     }
   }
   impl  Client {
-    pub fn add_point_request(&self) -> ::capnp::capability::Request<crate::fe2o3_agent_schema_capnp::point_tracker::add_point_params::Owned,crate::fe2o3_agent_schema_capnp::point_tracker::add_point_results::Owned> {
+    pub fn add_point_request(&self) -> ::capnp::capability::Request<crate::server::fe2o3_agent_schema_capnp::point_tracker::add_point_params::Owned,crate::server::fe2o3_agent_schema_capnp::point_tracker::add_point_results::Owned> {
       self.client.new_call(_private::TYPE_ID, 0, ::core::option::Option::None)
     }
   }
@@ -385,7 +385,7 @@ pub mod point_tracker {
         self.reader.total_size()
       }
       #[inline]
-      pub fn get_p(self) -> ::capnp::Result<crate::fe2o3_agent_schema_capnp::point::Reader<'a>> {
+      pub fn get_p(self) -> ::capnp::Result<crate::server::fe2o3_agent_schema_capnp::point::Reader<'a>> {
         ::capnp::traits::FromPointerReader::get_from_pointer(&self.reader.get_pointer_field(0), ::core::option::Option::None)
       }
       #[inline]
@@ -447,15 +447,15 @@ pub mod point_tracker {
         self.builder.as_reader().total_size()
       }
       #[inline]
-      pub fn get_p(self) -> ::capnp::Result<crate::fe2o3_agent_schema_capnp::point::Builder<'a>> {
+      pub fn get_p(self) -> ::capnp::Result<crate::server::fe2o3_agent_schema_capnp::point::Builder<'a>> {
         ::capnp::traits::FromPointerBuilder::get_from_pointer(self.builder.get_pointer_field(0), ::core::option::Option::None)
       }
       #[inline]
-      pub fn set_p(&mut self, value: crate::fe2o3_agent_schema_capnp::point::Reader<'_>) -> ::capnp::Result<()> {
+      pub fn set_p(&mut self, value: crate::server::fe2o3_agent_schema_capnp::point::Reader<'_>) -> ::capnp::Result<()> {
         ::capnp::traits::SetterInput::set_pointer_builder(self.builder.reborrow().get_pointer_field(0), value, false)
       }
       #[inline]
-      pub fn init_p(self, ) -> crate::fe2o3_agent_schema_capnp::point::Builder<'a> {
+      pub fn init_p(self, ) -> crate::server::fe2o3_agent_schema_capnp::point::Builder<'a> {
         ::capnp::traits::FromPointerBuilder::init_pointer(self.builder.get_pointer_field(0), 0)
       }
       #[inline]
@@ -471,7 +471,7 @@ pub mod point_tracker {
       }
     }
     impl Pipeline  {
-      pub fn get_p(&self) -> crate::fe2o3_agent_schema_capnp::point::Pipeline {
+      pub fn get_p(&self) -> crate::server::fe2o3_agent_schema_capnp::point::Pipeline {
         ::capnp::capability::FromTypelessPipeline::new(self._typeless.get_pointer_field(0))
       }
     }
@@ -515,7 +515,7 @@ pub mod point_tracker {
       ];
       pub fn get_field_types(index: u16) -> ::capnp::introspect::Type {
         match index {
-          0 => <crate::fe2o3_agent_schema_capnp::point::Owned as ::capnp::introspect::Introspect>::introspect(),
+          0 => <crate::server::fe2o3_agent_schema_capnp::point::Owned as ::capnp::introspect::Introspect>::introspect(),
           _ => panic!("invalid field index {}", index),
         }
       }
@@ -597,8 +597,8 @@ pub mod point_tracker {
         self.reader.total_size()
       }
       #[inline]
-      pub fn get_total_points(self) -> u64 {
-        self.reader.get_data_field::<u64>(0)
+      pub fn get_total_points(self) -> f32 {
+        self.reader.get_data_field::<f32>(0)
       }
     }
 
@@ -655,12 +655,12 @@ pub mod point_tracker {
         self.builder.as_reader().total_size()
       }
       #[inline]
-      pub fn get_total_points(self) -> u64 {
-        self.builder.get_data_field::<u64>(0)
+      pub fn get_total_points(self) -> f32 {
+        self.builder.get_data_field::<f32>(0)
       }
       #[inline]
-      pub fn set_total_points(&mut self, value: u64)  {
-        self.builder.set_data_field::<u64>(0, value);
+      pub fn set_total_points(&mut self, value: f32)  {
+        self.builder.set_data_field::<f32>(0, value);
       }
     }
 
@@ -703,17 +703,17 @@ pub mod point_tracker {
         ::capnp::word(24, 0, 0, 0, 2, 0, 1, 0),
         ::capnp::word(116, 111, 116, 97, 108, 80, 111, 105),
         ::capnp::word(110, 116, 115, 0, 0, 0, 0, 0),
-        ::capnp::word(9, 0, 0, 0, 0, 0, 0, 0),
+        ::capnp::word(10, 0, 0, 0, 0, 0, 0, 0),
         ::capnp::word(0, 0, 0, 0, 0, 0, 0, 0),
         ::capnp::word(0, 0, 0, 0, 0, 0, 0, 0),
         ::capnp::word(0, 0, 0, 0, 0, 0, 0, 0),
-        ::capnp::word(9, 0, 0, 0, 0, 0, 0, 0),
+        ::capnp::word(10, 0, 0, 0, 0, 0, 0, 0),
         ::capnp::word(0, 0, 0, 0, 0, 0, 0, 0),
         ::capnp::word(0, 0, 0, 0, 0, 0, 0, 0),
       ];
       pub fn get_field_types(index: u16) -> ::capnp::introspect::Type {
         match index {
-          0 => <u64 as ::capnp::introspect::Introspect>::introspect(),
+          0 => <f32 as ::capnp::introspect::Introspect>::introspect(),
           _ => panic!("invalid field index {}", index),
         }
       }
