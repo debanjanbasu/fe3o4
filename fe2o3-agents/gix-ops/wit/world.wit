@@ -1,0 +1,5 @@
+package fe2o3:gix-ops;
+
+world gix-ops {
+  import wasi:logging/logging;
+}

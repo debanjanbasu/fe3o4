@@ -1,7 +1,7 @@
 [package]
-name = "echo-messaging"
+name = "gix-ops"
 edition = "2021"
-version = "0.1.0"
+version = "0.2.0"
 
 [workspace]
 
@@ -10,3 +10,6 @@ crate-type = ["cdylib"]
 
 [dependencies]
 wit-bindgen = "0.32.0"
+anyhow = "1.0.89"
+reqwest = "0.12.7"
+# wasi = "0.13.1+wasi-0.2.0"
